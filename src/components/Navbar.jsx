@@ -2,13 +2,8 @@ import { Disclosure } from "@headlessui/react";
 import { Link as LinkScroll, scroller, Element } from "react-scroll";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Outlet, Link, useLocation } from "react-router-dom";
+import { rutas } from "../constantes/constantes";
 
-const navigation = [
-	{ name: "Inicio", href: "Inicio", current: true },
-	{ name: "¿Porque Nosotros?", href: "Nosotros", current: false },
-	{ name: "Experiencias", href: "Experiencias", current: false },
-	{ name: "Planes", href: "/Planes", current: false },
-];
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
@@ -55,7 +50,7 @@ export default function Navbar() {
 									</div>
 									<div className="hidden sm:ml-6 sm:block">
 										<div className="flex space-x-4">
-											{navigation.map((item) =>
+											{rutas.map((item) =>
 												item.name == "Planes" ? (
 													<Link
 														to={item.href}
@@ -110,7 +105,7 @@ export default function Navbar() {
 
 						<Disclosure.Panel className="sm:hidden">
 							<div className="space-y-1 px-2 pt-2 pb-3">
-								{navigation.map((item) => (
+								{rutas.map((item) => (
 									<Disclosure.Button
 										key={item.name}
 										as="a"

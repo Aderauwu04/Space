@@ -2,21 +2,18 @@ import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 import { Transition } from "@headlessui/react";
 import { useState } from "react";
-import { useTimeoutFn } from "react-use";
 
 export default function Inicio() {
 	const [Logo, logoState] = useState(false);
-	let [, , resetIsShowing] = useTimeoutFn(() => logoState(true), 500);
 
 	function scroll() {
 		const logoViewPort = document.getElementById("logo").getBoundingClientRect();
-		if (logoViewPort.bottom < 8) {
-			logoState(false);
-			resetIsShowing();
+		if (logoViewPort && logoViewPort.bottom < 8) {
+			logoState(true)
 		} else {
-			logoState(false);
-			resetIsShowing();
-		}
+			logoState(false)
+
+    }
 	}
 	document.addEventListener("scroll", scroll);
 
@@ -80,9 +77,9 @@ export default function Inicio() {
 					/>
 				</div>
 			</main>
-			<div className="absolute inset-x-0 top-[27rem] hidden md:block">
+			<div className="absolute inset-x-0 top-[22rem] hidden md:block">
 				<img
-					className="block md:h-[40rem] w-auto mx-auto max-w-none"
+					className="block md:h-[40rem] lg:h-[60rem] w-auto mx-auto max-w-none"
 					src="/src/images/Sol.png"
 					alt=""
 				/>
@@ -90,15 +87,11 @@ export default function Inicio() {
 			<Transition
 				show={Logo}
 				as="h3"
-				enter="transition-opacity duration-75"
-				enterFrom="opacity-0"
-				enterTo="opacity-100"
-				leave="transition-opacity duration-150"
-				leaveFrom="opacity-100"
-				leaveTo="opacity-0"
-				className="absolute bottom-[1rem] md:bottom-[-10rem] inset-x-0 text-center text-5xl text-zinc-900 bold tracking-tight"
+				enter="slide-bottom"
+        leave="slide-top"
+				className="absolute bottom-[1rem] duration-500 md:bottom-[-6rem] inset-x-0 text-center text-6xl text-zinc-300 md:text-zinc-900 font-bold tracking-tight"
 			>
-				¿Porque nosotros?
+				¿Por qué nosotros?
 			</Transition>
 		</div>
 	);

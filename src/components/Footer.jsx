@@ -1,19 +1,8 @@
-import {
-	faInstagram,
-	faBlogger,
-	faYoutube,
-	faSquareFacebook,
-	faTelegram,
-} from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faBlogger, faYoutube, faSquareFacebook, faTelegram} from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(faInstagram, faBlogger, faYoutube, faSquareFacebook, faTelegram);
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-const stats = [
-	{ name: "Sobre nosotros", value: "12" },
-	{ name: "Nuestros Servicios", value: "300+" },
-	{ name: "Nuestros seguros", value: "40" },
-];
+import { footerLinks } from "../constantes/constantes";
 
 export default function Footer() {
 	return (
@@ -72,12 +61,12 @@ export default function Footer() {
 				</div>
 				<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
 					<dl>
-						{stats.map((stat) => (
+						{footerLinks.map((footerLink) => (
 							<dt
-								key={stat.name}
+								key={footerLink.name}
 								className="text-2xl font-bold leading-9 tracking-tight text-slate-300"
 							>
-								{stat.name}
+								{footerLink.name}
 							</dt>
 						))}
 					</dl>

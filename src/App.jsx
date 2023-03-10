@@ -3,6 +3,7 @@ import Inicio from "../src/components/Inicio";
 import Formulario from "../src/components/Formulario";
 import Footer from "../src/components/Footer";
 import Planes from "./components/Planes";
+import PlanesVistaPrevia from "./components/PlanesVistaPrevia";
 import Experiencias from "../src/components/Experiencias";
 import Nosotros from "../src/components/Nosotros";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -19,6 +20,7 @@ export default function App() {
 								<>
 									<Inicio />
 									<Nosotros />
+									<PlanesVistaPrevia />
 									<Experiencias />
 									<Formulario />
 									<Footer />

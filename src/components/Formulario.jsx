@@ -10,7 +10,7 @@ export default function Example() {
 					bg-gradient-to-b from-[#422153] via-[#4e4d9d] to-[#86a4b1]
 					rounded-2xl
 					grid grid-cols-1 md:grid-cols-2 items-center gap-y-16 gap-x-8
-					md:w-[80vw] p-4 md:p-8 md:m-8 mt-16 lg:mx-auto
+					md:w-[80vw] p-4 md:p-8 md:m-8  lg:mx-auto mt-16
 				"
 				>
 					<div>
@@ -118,7 +118,7 @@ export default function Example() {
 							<div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
 								<button
 									type="submit"
-									className="rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+									className="w-full rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
 								>
 									Enviar
 								</button>
