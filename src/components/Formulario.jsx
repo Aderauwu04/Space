@@ -10,7 +10,7 @@ export default function Example() {
 					bg-gradient-to-b from-[#422153] via-[#4e4d9d] to-[#86a4b1]
 					rounded-2xl
 					grid grid-cols-1 md:grid-cols-2 items-center gap-y-16 gap-x-8
-					md:w-[80vw] mx-auto p-4 md:p-8 md:m-8 mt-16
+					md:w-[80vw] p-4 md:p-8 md:m-8 mt-16 lg:mx-auto
 				"
 				>
 					<div>

@@ -82,7 +82,7 @@ export default function Footer() {
 						))}
 					</dl>
 				</div>
-				<div className="grid grid-cols-5 md:grid-cols-3 gap-y-5 text-5xl text-center my-3 text-slate-300">
+				<div className="grid grid-cols-5 md:grid-cols-3 lg:grid-cols-5 gap-y-5 text-5xl text-center my-3 text-slate-300">
 					<div className="pointer">
 						<FontAwesomeIcon icon="fa-brands fa-instagram" />
 					</div>
