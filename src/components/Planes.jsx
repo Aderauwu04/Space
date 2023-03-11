@@ -19,7 +19,7 @@ export default function PlanesVistaPrevia() {
 					</p>
 				</div>
 				{planes.map((plan) => (
-					<div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+					<div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none" key={plan.id}>
 						<div className="p-8 sm:p-10 lg:flex-auto" key={plan.titulo}>
 							<h3 className="text-2xl font-bold tracking-tight text-zinc-300">
 								{plan.titulo}

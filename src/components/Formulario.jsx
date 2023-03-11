@@ -1,4 +1,49 @@
-export default function Example() {
+import { Transition } from "@headlessui/react";
+import { Fragment, useState } from "react";
+import axios from "axios";
+
+function classNames(...classes) {
+	return classes.filter(Boolean).join(" ");
+}
+
+export default function Formulario() {
+	const [nombre, setNombre] = useState("");
+	const [apellido, setApellido] = useState("");
+	const [correo, setCorreo] = useState("");
+	const [pais, setPais] = useState("");
+	const [ciudad, setCiudad] = useState("");
+	const [respuesta, setRespuesta] = useState("");
+
+	function Handle(e) {
+		e.preventDefault();
+		let object = {
+			nombre,
+			apellido,
+			correo,
+			pais,
+			ciudad,
+		};
+		axios
+			.post("https://jsonplaceholder.typicode.com/posts", object, {
+				headers: { "Content-Type": "application/json" },
+			})
+			.then((response) => {
+				// Respuesta de petición exitosa
+				setNombre("")
+				setApellido("")
+				setCorreo("")
+				setPais("")
+				setCiudad("")
+				setRespuesta("Exitoso");
+			})
+			.catch((err) => {
+				// Respuesta de petición fallida
+				setRespuesta("Fallido");
+			});
+		setTimeout(() => {
+			setRespuesta("");
+		}, 5000);
+	}
 	return (
 		<>
 			<div className="mx-auto md:p-8 m-8 mt-16" id="Formulario">
@@ -10,7 +55,7 @@ export default function Example() {
 					bg-gradient-to-b from-[#422153] via-[#4e4d9d] to-[#86a4b1]
 					rounded-2xl
 					grid grid-cols-1 md:grid-cols-2 items-center gap-y-16 gap-x-8
-					md:w-[80vw] p-4 md:p-8 md:m-8  lg:mx-auto mt-16
+					md:max-w-[90rem] p-4 md:p-8 md:m-8  lg:mx-auto mt-16
 				"
 				>
 					<div>
@@ -27,7 +72,7 @@ export default function Example() {
 							compañeros de viaje.
 						</p>
 					</div>
-					<form action="#" method="POST">
+					<form onSubmit={Handle} method="POST">
 						<div className="overflow-hidden shadow rounded-md">
 							<div className="bg-white px-4 py-5 sm:p-6">
 								<div className="grid grid-cols-4 gap-6">
@@ -39,11 +84,16 @@ export default function Example() {
 											Nombre
 										</label>
 										<input
+											value={nombre}
+											required
+											onChange={(e) => {
+												setNombre(e.target.value);
+											}}
 											type="text"
 											name="first-name"
 											id="first-name"
 											autoComplete="given-name"
-											className="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+											className="mt-2 p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 										/>
 									</div>
 
@@ -55,11 +105,16 @@ export default function Example() {
 											Apellido
 										</label>
 										<input
+											value={apellido}
+											required
+											onChange={(e) => {
+												setApellido(e.target.value);
+											}}
 											type="text"
 											name="last-name"
 											id="last-name"
 											autoComplete="family-name"
-											className="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+											className="mt-2 p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 										/>
 									</div>
 
@@ -71,11 +126,16 @@ export default function Example() {
 											Correo
 										</label>
 										<input
+											value={correo}
+											required
+											onChange={(e) => {
+												setCorreo(e.target.value);
+											}}
 											type="text"
 											name="email-address"
 											id="email-address"
 											autoComplete="email"
-											className="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+											className="mt-2 p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 										/>
 									</div>
 
@@ -87,14 +147,19 @@ export default function Example() {
 											País
 										</label>
 										<select
+											value={pais}
+											required
+											onChange={(e) => {
+												setPais(e.target.value);
+											}}
 											id="country"
 											name="country"
 											autoComplete="country-name"
 											className="mt-2 block w-full rounded-md border-0 bg-white py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 										>
-											<option>United States</option>
-											<option>Canada</option>
-											<option>Mexico</option>
+											<option defaultValue="United States">United States</option>
+											<option value="Canada">Canada</option>
+											<option value="Mexica">Mexico</option>
 										</select>
 									</div>
 
@@ -106,11 +171,16 @@ export default function Example() {
 											Ciudad
 										</label>
 										<input
+											value={ciudad}
+											required
+											onChange={(e) => {
+												setCiudad(e.target.value);
+											}}
 											type="text"
 											name="city"
 											id="city"
 											autoComplete="address-level2"
-											className="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+											className="mt-2 p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 										/>
 									</div>
 								</div>
@@ -126,6 +196,24 @@ export default function Example() {
 						</div>
 					</form>
 				</div>
+			</div>
+			<div>
+				<Transition
+					show={respuesta.length > 0}
+					as={Fragment}
+					enter="slide-bottom"
+					leave="slide-top"
+					className={classNames(
+						respuesta == "Exitoso" && respuesta.length ? 'bg-indigo-600' : 'bg-red-500',
+						"duration-500 fixed top-20 right-3 rounded-md text-sm text-slate-300 font-bold tracking-tight p-3"
+						)}
+				>
+					<p>
+						{respuesta == "Exitoso" && respuesta.length
+							? "Tu solicitud ha sido enviada"
+							: "Parece que ha habido un problema, intenta más tarde."}
+					</p>
+				</Transition>
 			</div>
 		</>
 	);

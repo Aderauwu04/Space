@@ -18,7 +18,7 @@ export default function Inicio() {
 	document.addEventListener("scroll", scroll);
 
 	return (
-		<div className="isolate overflow-x-hidden h-[100vh] bg-image" id="Inicio">
+		<div className="isolate overflow-x-hidden h-[100vh] xl:max-h-[55rem] bg-image" id="Inicio">
 			<main>
 				<div className="relative px-6 lg:px-8 z-[1]">
 					<div className="mx-auto max-w-2xl py-32 sm:py-20 lg:py-50">
@@ -89,7 +89,7 @@ export default function Inicio() {
 				as="h3"
 				enter="slide-bottom"
         leave="slide-top"
-				className="absolute bottom-[1rem] duration-500 md:bottom-[-6rem] inset-x-0 text-center text-6xl text-zinc-300 md:text-zinc-900 font-bold tracking-tight"
+				className="absolute bottom-[1rem] xl-bottom-0 duration-500 md:bottom-[-6rem] inset-x-0 text-center text-6xl text-zinc-300 md:text-zinc-900 font-bold tracking-tight"
 			>
 				¿Por qué nosotros?
 			</Transition>
