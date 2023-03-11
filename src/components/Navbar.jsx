@@ -19,7 +19,7 @@ export default function Navbar() {
 	// }
 	return (
 		<>
-			<Disclosure as="nav" className="sticky w-full top-0 bg-transparent z-50">
+			<Disclosure as="nav" className="sticky w-full top-0 bg-zinc-900 md:bg-transparent z-50">
 				{({ open }) => (
 					<>
 						<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

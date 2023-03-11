@@ -47,7 +47,7 @@ export default function Inicio() {
 								Animate viajar a lugares lejanos
 								<span className="block text-zinc-100 bold">Mándanos tu solicitud</span>
 							</p>
-							<div className="mt-10 flex items-center justify-center gap-x-6">
+							<div className="mt-10 flex flex-col md:flex-row gap-y-7 items-center justify-center gap-x-6">
 								<LinkScroll
 									to={"Formulario"}
 									spy={true}
@@ -62,7 +62,7 @@ export default function Inicio() {
 									spy={true}
 									smooth={true}
 									duration={500}
-									className="text-sm font-semibold leading-6 text-gray-900"
+									className="text-sm font-semibold leading-6 text-slate-300 md:text-slate-900"
 								>
 									Saber más <span aria-hidden="true">→</span>
 								</LinkScroll>
@@ -77,9 +77,9 @@ export default function Inicio() {
 					/>
 				</div>
 			</main>
-			<div className="absolute inset-x-0 top-[22rem] hidden md:block">
+			<div className="absolute inset-x-0 top-[22rem] hidden md:block overflow-hidden">
 				<img
-					className="block md:h-[40rem] lg:h-[60rem] w-auto mx-auto max-w-none"
+					className="block md:h-[60rem] lg:h-[60rem] w-auto mx-auto max-w-none -ml-[12%] lg:ml-auto"
 					src="/src/images/Sol.png"
 					alt=""
 				/>

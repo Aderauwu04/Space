@@ -6,6 +6,7 @@ import Planes from "./components/Planes";
 import PlanesVistaPrevia from "./components/PlanesVistaPrevia";
 import Experiencias from "../src/components/Experiencias";
 import Nosotros from "../src/components/Nosotros";
+import NotFound from "../src/components/Pagina404";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
@@ -33,6 +34,14 @@ export default function App() {
 								<>
 									<Planes />
 									<Footer />
+								</>
+							}
+						/>
+						<Route
+							path="*"
+							element={
+								<>
+									<NotFound />
 								</>
 							}
 						/>

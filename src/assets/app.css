@@ -13,7 +13,13 @@
   background-size: cover;
 }
 .nave-animation {
+  bottom: 20%;
   animation: flying 100s linear infinite forwards;
+}
+@media (min-width: 768px) {
+  .nave-animation {
+    bottom: auto;
+  }
 }
 @keyframes flying {
   0% {
