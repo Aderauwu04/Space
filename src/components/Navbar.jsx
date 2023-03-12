@@ -1,22 +1,14 @@
 import { Disclosure } from "@headlessui/react";
-import { Link as LinkScroll, scroller, Element } from "react-scroll";
+import { Link as LinkScroll } from "react-scroll";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { rutas } from "../constantes/constantes";
 
-
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
 }
-
 export default function Navbar() {
 	const location = useLocation();
-	// const scroll = scroller()
-	// function scroll(section) {
-	// 	setTimeout(() => {
-	// 		scrollTo(section)
-	// 	}, 100);
-	// }
 	return (
 		<>
 			<Disclosure as="nav" className="sticky w-full top-0 bg-zinc-900 md:bg-transparent z-50">
@@ -68,7 +60,6 @@ export default function Navbar() {
 													<Link
 														to="/"
 														key={item.name}
-														// onClick={scroll(item.name)}
 														className={classNames(
 															item.current
 																? "bg-gray-900 text-white"
