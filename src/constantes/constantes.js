@@ -36,7 +36,7 @@ const planes = [
 	{
 		id: "3",
 		titulo: "Viaje a Venus",
-		descripcion: "Ni",
+		descripcion: "Es el planeta más cálido del sistema solar ¡animate a conocerlo!",
 		precio: "$3.299k",
 		unidad: "USD",
 		caracteristicas: [

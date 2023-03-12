@@ -12,7 +12,6 @@ export default function Inicio() {
 			logoState(true)
 		} else {
 			logoState(false)
-
     }
 	}
 	document.addEventListener("scroll", scroll);
@@ -43,9 +42,9 @@ export default function Inicio() {
 							<h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-6xl">
 								Emprende grandes viajes
 							</h1>
-							<p className="text-center mt-2 text-lg leading-8 text-slate-300">
+							<p className="text-center mt-2 md:mt-8 text-lg leading-8 text-slate-300 md:text-slate-900">
 								Animate viajar a lugares lejanos
-								<span className="block text-zinc-100 bold">Mándanos tu solicitud</span>
+								<span className="block text-zinc-100 md:text-zinc-800 bold">Mándanos tu solicitud</span>
 							</p>
 							<div className="mt-10 flex flex-col md:flex-row gap-y-7 items-center justify-center gap-x-6">
 								<LinkScroll

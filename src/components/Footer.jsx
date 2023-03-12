@@ -59,7 +59,7 @@ export default function Footer() {
 				<div className="mx-auto w-[15rem] lg:mx-0">
 					<img src="/space.svg" className="w-auto" />
 				</div>
-				<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+				<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none text-josefin-sans">
 					<dl>
 						{footerLinks.map((footerLink) => (
 							<dt

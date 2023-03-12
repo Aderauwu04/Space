@@ -6,7 +6,7 @@ export default function Experiencias() {
 			<h3 className="text-center font-bold tracking-tight text-zinc-300 text-3xl text-5xl md:text-8xl lg:text-[9.25rem]">
 				Experiencias
 			</h3>
-			<p className="text-2xl bold text-center text-zinc-300 mt-4 md:mt-4 lg:my-10 xl:mt-16">
+			<p className="text-2xl bold text-center text-zinc-300 mt-4 md:mt-4 lg:my-10 xl:mt-15">
 				Conoce la opinión de nuestros viajeros
 			</p>
 			<div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-7 md:max-w-[90rem] xl:grid-cols-3 py-24 px-4 pt-1 sm:px-6 lg:px-8">
